@@ -1,0 +1,250 @@
+{
+  "summary": {
+    "date": "2026-09-30",
+    "engine": "Offline reader (no AI)",
+    "documents": 19,
+    "field_accuracy_all": 95.3,
+    "field_accuracy_readable": 99.4,
+    "documents_fully_correct": 17,
+    "documents_fully_correct_readable": "17/18",
+    "line_items_correct_docs": 18,
+    "avg_seconds_per_doc": 1.41,
+    "total_seconds": 26.7,
+    "manual_minutes_estimate": 95.0,
+    "totals_mismatch_caught": "1/1",
+    "blurry_photo_flagged": "1/1",
+    "per_field_accuracy": {
+      "vendor": 100.0,
+      "invoice_no": 94.7,
+      "date": 94.7,
+      "tax_id": 94.7,
+      "customer": 89.5,
+      "subtotal": 94.7,
+      "tax": 94.7,
+      "total": 94.7,
+      "currency": 100.0
+    },
+    "cost_per_invoice": "0 (offline)"
+  },
+  "documents": [
+    {
+      "file": "alnoor_INV-2041.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "4/4",
+      "seconds": 0.73
+    },
+    {
+      "file": "alnoor_INV-2057.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "6/6",
+      "seconds": 0.08
+    },
+    {
+      "file": "crescent_CP-26-0187.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "5/5",
+      "seconds": 0.07
+    },
+    {
+      "file": "crescent_CP-26-0203.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "3/3",
+      "seconds": 0.07
+    },
+    {
+      "file": "swift_courier_SC-88213.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "3/3",
+      "seconds": 0.06
+    },
+    {
+      "file": "margalla_ME-5521.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "5/5",
+      "seconds": 0.07
+    },
+    {
+      "file": "indus_office_IOS-1190.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "5/5",
+      "seconds": 0.07
+    },
+    {
+      "file": "ravi_textiles_RT-3302.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "4/4",
+      "seconds": 0.08
+    },
+    {
+      "file": "global_imports_GTI-7781.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "3/3",
+      "seconds": 0.06
+    },
+    {
+      "file": "crescent_CP-26-0211_multipage.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "32/32",
+      "seconds": 0.16
+    },
+    {
+      "file": "barkat_karyana_BK-0415_urdu.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "5/5",
+      "seconds": 0.07
+    },
+    {
+      "file": "swift_courier_SC-88240.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "4/4",
+      "seconds": 0.06
+    },
+    {
+      "file": "indus_office_IOS-1204_totals_wrong.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "4/4",
+      "seconds": 0.07
+    },
+    {
+      "file": "photo_alnoor_INV-2063.jpg",
+      "kind": "photo",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "4/4",
+      "seconds": 5.64
+    },
+    {
+      "file": "photo_swift_courier_SC-88257.jpg",
+      "kind": "photo",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "3/3",
+      "seconds": 5.53
+    },
+    {
+      "file": "photo_ravi_textiles_RT-3318.jpg",
+      "kind": "photo",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "3/3",
+      "seconds": 5.61
+    },
+    {
+      "file": "scan_margalla_ME-5544.pdf",
+      "kind": "scan",
+      "engine": "offline",
+      "fields_correct": 8,
+      "fields_total": 9,
+      "missed": [
+        "customer"
+      ],
+      "items_correct": true,
+      "items": "3/3",
+      "seconds": 5.96
+    },
+    {
+      "file": "photo_blurry_margalla_ME-5560.jpg",
+      "kind": "photo",
+      "engine": "offline",
+      "fields_correct": 2,
+      "fields_total": 9,
+      "missed": [
+        "invoice_no",
+        "date",
+        "tax_id",
+        "customer",
+        "subtotal",
+        "tax",
+        "total"
+      ],
+      "items_correct": false,
+      "items": "0/3",
+      "seconds": 2.22
+    },
+    {
+      "file": "crescent_invoice_copy_from_email.pdf",
+      "kind": "pdf",
+      "engine": "offline",
+      "fields_correct": 9,
+      "fields_total": 9,
+      "missed": [],
+      "items_correct": true,
+      "items": "5/5",
+      "seconds": 0.08
+    }
+  ]
+}

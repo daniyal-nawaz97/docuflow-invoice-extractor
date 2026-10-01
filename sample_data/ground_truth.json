@@ -1,0 +1,899 @@
+{
+  "alnoor_INV-2041.pdf": {
+    "vendor": "Al-Noor Traders",
+    "invoice_no": "INV-2041",
+    "date": "2026-09-12",
+    "tax_id": "8078673-0",
+    "customer": "Zara Fashion Hub",
+    "subtotal": 40600.0,
+    "tax": 7308.0,
+    "total": 47908.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Cooking Oil 5L tin",
+        "quantity": 4,
+        "unit_price": 2750.0,
+        "amount": 11000.0
+      },
+      {
+        "description": "Basmati Rice 5kg bag",
+        "quantity": 4,
+        "unit_price": 1850.0,
+        "amount": 7400.0
+      },
+      {
+        "description": "Wheat Flour 20kg",
+        "quantity": 3,
+        "unit_price": 2600.0,
+        "amount": 7800.0
+      },
+      {
+        "description": "Sugar 50kg sack",
+        "quantity": 2,
+        "unit_price": 7200.0,
+        "amount": 14400.0
+      }
+    ],
+    "notes": []
+  },
+  "alnoor_INV-2057.pdf": {
+    "vendor": "Al-Noor Traders",
+    "invoice_no": "INV-2057",
+    "date": "2026-09-18",
+    "tax_id": "5667265-0",
+    "customer": "Green Valley Distributors",
+    "subtotal": 85680.0,
+    "tax": 15422.4,
+    "total": 101102.4,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Basmati Rice 5kg bag",
+        "quantity": 20,
+        "unit_price": 1850.0,
+        "amount": 37000.0
+      },
+      {
+        "description": "Cooking Oil 5L tin",
+        "quantity": 4,
+        "unit_price": 2750.0,
+        "amount": 11000.0
+      },
+      {
+        "description": "Chickpeas 1kg",
+        "quantity": 50,
+        "unit_price": 320.0,
+        "amount": 16000.0
+      },
+      {
+        "description": "Lentils (Daal Masoor) 1kg",
+        "quantity": 20,
+        "unit_price": 360.0,
+        "amount": 7200.0
+      },
+      {
+        "description": "Tea Leaves 900g",
+        "quantity": 10,
+        "unit_price": 1420.0,
+        "amount": 14200.0
+      },
+      {
+        "description": "Salt 800g",
+        "quantity": 4,
+        "unit_price": 70.0,
+        "amount": 280.0
+      }
+    ],
+    "notes": []
+  },
+  "crescent_CP-26-0187.pdf": {
+    "vendor": "Crescent Packaging (Pvt) Ltd",
+    "invoice_no": "CP/26/0187",
+    "date": "2026-09-03",
+    "tax_id": "7022674-5",
+    "customer": "Zara Fashion Hub",
+    "subtotal": 22500.0,
+    "tax": 4050.0,
+    "total": 26550.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Bubble Wrap Roll 50m",
+        "quantity": 4,
+        "unit_price": 1950.0,
+        "amount": 7800.0
+      },
+      {
+        "description": "Stretch Film 18in",
+        "quantity": 6,
+        "unit_price": 1700.0,
+        "amount": 10200.0
+      },
+      {
+        "description": "Fragile Stickers (500)",
+        "quantity": 2,
+        "unit_price": 650.0,
+        "amount": 1300.0
+      },
+      {
+        "description": "Void Fill Paper Pack",
+        "quantity": 2,
+        "unit_price": 900.0,
+        "amount": 1800.0
+      },
+      {
+        "description": "Corrugated Box 18x12x12",
+        "quantity": 10,
+        "unit_price": 140.0,
+        "amount": 1400.0
+      }
+    ],
+    "notes": []
+  },
+  "crescent_CP-26-0203.pdf": {
+    "vendor": "Crescent Packaging (Pvt) Ltd",
+    "invoice_no": "CP/26/0203",
+    "date": "2026-09-21",
+    "tax_id": "2322047-8",
+    "customer": "Green Valley Distributors",
+    "subtotal": 33970.0,
+    "tax": 6024.6,
+    "total": 39494.6,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Void Fill Paper Pack",
+        "quantity": 12,
+        "unit_price": 900.0,
+        "amount": 10800.0
+      },
+      {
+        "description": "Poly Mailer Bags 10x14 (100)",
+        "quantity": 20,
+        "unit_price": 1150.0,
+        "amount": 23000.0
+      },
+      {
+        "description": "Corrugated Box 12x10x8",
+        "quantity": 2,
+        "unit_price": 85.0,
+        "amount": 170.0
+      }
+    ],
+    "discount": 500.0,
+    "notes": []
+  },
+  "swift_courier_SC-88213.pdf": {
+    "vendor": "Swift Courier Services",
+    "invoice_no": "SC-88213",
+    "date": "2026-09-30",
+    "tax_id": "5855124-1",
+    "customer": "Bright Mart Superstore",
+    "subtotal": 1700.0,
+    "tax": 272.0,
+    "total": 1972.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Return Handling Charges",
+        "quantity": 4,
+        "unit_price": 95.0,
+        "amount": 380.0
+      },
+      {
+        "description": "Packaging Service",
+        "quantity": 2,
+        "unit_price": 60.0,
+        "amount": 120.0
+      },
+      {
+        "description": "Fuel Surcharge",
+        "quantity": 1,
+        "unit_price": 1200.0,
+        "amount": 1200.0
+      }
+    ],
+    "notes": []
+  },
+  "margalla_ME-5521.pdf": {
+    "vendor": "Margalla Electronics",
+    "invoice_no": "ME-5521",
+    "date": "2026-09-09",
+    "tax_id": "4514944-4",
+    "customer": "NovaCart Online Store",
+    "subtotal": 132844.0,
+    "tax": 23911.92,
+    "total": 156755.92,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Power Bank 20000mAh",
+        "quantity": 12,
+        "unit_price": 5200.0,
+        "amount": 62400.0
+      },
+      {
+        "description": "USB-C to Lightning Cable",
+        "quantity": 50,
+        "unit_price": 1100.0,
+        "amount": 55000.0
+      },
+      {
+        "description": "USB-C Fast Charger 25W",
+        "quantity": 6,
+        "unit_price": 1499.0,
+        "amount": 8994.0
+      },
+      {
+        "description": "Phone Holder Car Mount",
+        "quantity": 3,
+        "unit_price": 850.0,
+        "amount": 2550.0
+      },
+      {
+        "description": "HDMI Cable 2m",
+        "quantity": 6,
+        "unit_price": 650.0,
+        "amount": 3900.0
+      }
+    ],
+    "notes": []
+  },
+  "indus_office_IOS-1190.pdf": {
+    "vendor": "Indus Office Supplies",
+    "invoice_no": "IOS-1190",
+    "date": "2026-09-15",
+    "tax_id": "6440561-0",
+    "customer": "Bright Mart Superstore",
+    "subtotal": 134000.0,
+    "tax": 24120.0,
+    "total": 158120.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Ball Pens Blue (box of 50)",
+        "quantity": 3,
+        "unit_price": 750.0,
+        "amount": 2250.0
+      },
+      {
+        "description": "Printer Toner 85A",
+        "quantity": 12,
+        "unit_price": 6800.0,
+        "amount": 81600.0
+      },
+      {
+        "description": "Whiteboard Marker Set",
+        "quantity": 10,
+        "unit_price": 540.0,
+        "amount": 5400.0
+      },
+      {
+        "description": "Desk Organizer",
+        "quantity": 5,
+        "unit_price": 1150.0,
+        "amount": 5750.0
+      },
+      {
+        "description": "Sticky Notes 3x3 (12 pads)",
+        "quantity": 50,
+        "unit_price": 780.0,
+        "amount": 39000.0
+      }
+    ],
+    "notes": []
+  },
+  "ravi_textiles_RT-3302.pdf": {
+    "vendor": "Ravi Textiles",
+    "invoice_no": "RT-3302",
+    "date": "2026-09-11",
+    "tax_id": "4567281-7",
+    "customer": "NovaCart Online Store",
+    "subtotal": 11650.0,
+    "tax": 1980.5,
+    "total": 13630.5,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Khaddar Fabric (meter)",
+        "quantity": 5,
+        "unit_price": 610.0,
+        "amount": 3050.0
+      },
+      {
+        "description": "Cotton Lawn Fabric (meter)",
+        "quantity": 2,
+        "unit_price": 520.0,
+        "amount": 1040.0
+      },
+      {
+        "description": "Printed Cambric (meter)",
+        "quantity": 4,
+        "unit_price": 450.0,
+        "amount": 1800.0
+      },
+      {
+        "description": "Polyester Thread Cone",
+        "quantity": 24,
+        "unit_price": 240.0,
+        "amount": 5760.0
+      }
+    ],
+    "notes": []
+  },
+  "global_imports_GTI-7781.pdf": {
+    "vendor": "Global Tech Imports FZE",
+    "invoice_no": "GTI-7781",
+    "date": "2026-09-05",
+    "tax_id": "5408072-9",
+    "customer": "Bright Mart Superstore",
+    "subtotal": 2151.0,
+    "tax": 107.55,
+    "total": 2258.55,
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Spare Printhead 203dpi",
+        "quantity": 3,
+        "unit_price": 145.0,
+        "amount": 435.0
+      },
+      {
+        "description": "Barcode Scanner Handheld",
+        "quantity": 5,
+        "unit_price": 96.0,
+        "amount": 480.0
+      },
+      {
+        "description": "Laser Label Printer",
+        "quantity": 3,
+        "unit_price": 412.0,
+        "amount": 1236.0
+      }
+    ],
+    "notes": []
+  },
+  "crescent_CP-26-0211_multipage.pdf": {
+    "vendor": "Crescent Packaging (Pvt) Ltd",
+    "invoice_no": "CP/26/0211",
+    "date": "2026-09-25",
+    "tax_id": "2161193-8",
+    "customer": "Green Valley Distributors",
+    "subtotal": 408330.0,
+    "tax": 73499.4,
+    "total": 481829.4,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Stretch Film 18in",
+        "quantity": 12,
+        "unit_price": 1700.0,
+        "amount": 20400.0
+      },
+      {
+        "description": "Void Fill Paper Pack",
+        "quantity": 1,
+        "unit_price": 900.0,
+        "amount": 900.0
+      },
+      {
+        "description": "Stretch Film 18in",
+        "quantity": 5,
+        "unit_price": 1700.0,
+        "amount": 8500.0
+      },
+      {
+        "description": "Fragile Stickers (500)",
+        "quantity": 20,
+        "unit_price": 650.0,
+        "amount": 13000.0
+      },
+      {
+        "description": "Packing Tape 2in (36 rolls)",
+        "quantity": 3,
+        "unit_price": 2880.0,
+        "amount": 8640.0
+      },
+      {
+        "description": "Bubble Wrap Roll 50m",
+        "quantity": 20,
+        "unit_price": 1950.0,
+        "amount": 39000.0
+      },
+      {
+        "description": "Thermal Labels 4x6 (500)",
+        "quantity": 2,
+        "unit_price": 1450.0,
+        "amount": 2900.0
+      },
+      {
+        "description": "Kraft Paper Roll",
+        "quantity": 50,
+        "unit_price": 1350.0,
+        "amount": 67500.0
+      },
+      {
+        "description": "Corrugated Box 18x12x12",
+        "quantity": 5,
+        "unit_price": 140.0,
+        "amount": 700.0
+      },
+      {
+        "description": "Corrugated Box 12x10x8",
+        "quantity": 50,
+        "unit_price": 85.0,
+        "amount": 4250.0
+      },
+      {
+        "description": "Corrugated Box 18x12x12",
+        "quantity": 20,
+        "unit_price": 140.0,
+        "amount": 2800.0
+      },
+      {
+        "description": "Bubble Wrap Roll 50m",
+        "quantity": 24,
+        "unit_price": 1950.0,
+        "amount": 46800.0
+      },
+      {
+        "description": "Bubble Wrap Roll 50m",
+        "quantity": 4,
+        "unit_price": 1950.0,
+        "amount": 7800.0
+      },
+      {
+        "description": "Stretch Film 18in",
+        "quantity": 3,
+        "unit_price": 1700.0,
+        "amount": 5100.0
+      },
+      {
+        "description": "Void Fill Paper Pack",
+        "quantity": 6,
+        "unit_price": 900.0,
+        "amount": 5400.0
+      },
+      {
+        "description": "Corrugated Box 18x12x12",
+        "quantity": 3,
+        "unit_price": 140.0,
+        "amount": 420.0
+      },
+      {
+        "description": "Stretch Film 18in",
+        "quantity": 20,
+        "unit_price": 1700.0,
+        "amount": 34000.0
+      },
+      {
+        "description": "Stretch Film 18in",
+        "quantity": 20,
+        "unit_price": 1700.0,
+        "amount": 34000.0
+      },
+      {
+        "description": "Void Fill Paper Pack",
+        "quantity": 1,
+        "unit_price": 900.0,
+        "amount": 900.0
+      },
+      {
+        "description": "Kraft Paper Roll",
+        "quantity": 24,
+        "unit_price": 1350.0,
+        "amount": 32400.0
+      },
+      {
+        "description": "Thermal Labels 4x6 (500)",
+        "quantity": 6,
+        "unit_price": 1450.0,
+        "amount": 8700.0
+      },
+      {
+        "description": "Poly Mailer Bags 10x14 (100)",
+        "quantity": 12,
+        "unit_price": 1150.0,
+        "amount": 13800.0
+      },
+      {
+        "description": "Thermal Labels 4x6 (500)",
+        "quantity": 1,
+        "unit_price": 1450.0,
+        "amount": 1450.0
+      },
+      {
+        "description": "Corrugated Box 12x10x8",
+        "quantity": 2,
+        "unit_price": 85.0,
+        "amount": 170.0
+      },
+      {
+        "description": "Corrugated Box 18x12x12",
+        "quantity": 6,
+        "unit_price": 140.0,
+        "amount": 840.0
+      },
+      {
+        "description": "Thermal Labels 4x6 (500)",
+        "quantity": 5,
+        "unit_price": 1450.0,
+        "amount": 7250.0
+      },
+      {
+        "description": "Poly Mailer Bags 10x14 (100)",
+        "quantity": 4,
+        "unit_price": 1150.0,
+        "amount": 4600.0
+      },
+      {
+        "description": "Fragile Stickers (500)",
+        "quantity": 1,
+        "unit_price": 650.0,
+        "amount": 650.0
+      },
+      {
+        "description": "Corrugated Box 18x12x12",
+        "quantity": 4,
+        "unit_price": 140.0,
+        "amount": 560.0
+      },
+      {
+        "description": "Poly Mailer Bags 10x14 (100)",
+        "quantity": 24,
+        "unit_price": 1150.0,
+        "amount": 27600.0
+      },
+      {
+        "description": "Stretch Film 18in",
+        "quantity": 2,
+        "unit_price": 1700.0,
+        "amount": 3400.0
+      },
+      {
+        "description": "Bubble Wrap Roll 50m",
+        "quantity": 2,
+        "unit_price": 1950.0,
+        "amount": 3900.0
+      }
+    ],
+    "notes": []
+  },
+  "barkat_karyana_BK-0415_urdu.pdf": {
+    "vendor": "Barkat Karyana Store",
+    "invoice_no": "BK-0415",
+    "date": "2026-09-20",
+    "tax_id": "4374754-4",
+    "customer": "Bright Mart Superstore",
+    "subtotal": 111670.0,
+    "tax": 0.0,
+    "total": 111670.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Sugar 50kg sack",
+        "quantity": 3,
+        "unit_price": 7200.0,
+        "amount": 21600.0
+      },
+      {
+        "description": "Salt 800g",
+        "quantity": 5,
+        "unit_price": 70.0,
+        "amount": 350.0
+      },
+      {
+        "description": "Wheat Flour 20kg",
+        "quantity": 20,
+        "unit_price": 2600.0,
+        "amount": 52000.0
+      },
+      {
+        "description": "Red Chilli Powder 1kg",
+        "quantity": 24,
+        "unit_price": 980.0,
+        "amount": 23520.0
+      },
+      {
+        "description": "Tea Leaves 900g",
+        "quantity": 10,
+        "unit_price": 1420.0,
+        "amount": 14200.0
+      }
+    ],
+    "notes": []
+  },
+  "swift_courier_SC-88240.pdf": {
+    "vendor": "Swift Courier Services",
+    "invoice_no": "SC-88240",
+    "date": "2026-09-16",
+    "tax_id": "1352896-9",
+    "customer": "NovaCart Online Store",
+    "subtotal": 4520.0,
+    "tax": 723.2,
+    "total": 5243.2,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Fuel Surcharge",
+        "quantity": 2,
+        "unit_price": 1200.0,
+        "amount": 2400.0
+      },
+      {
+        "description": "Return Handling Charges",
+        "quantity": 4,
+        "unit_price": 95.0,
+        "amount": 380.0
+      },
+      {
+        "description": "COD Deliveries Karachi (per parcel)",
+        "quantity": 4,
+        "unit_price": 210.0,
+        "amount": 840.0
+      },
+      {
+        "description": "Same-day Delivery",
+        "quantity": 2,
+        "unit_price": 450.0,
+        "amount": 900.0
+      }
+    ],
+    "notes": []
+  },
+  "indus_office_IOS-1204_totals_wrong.pdf": {
+    "vendor": "Indus Office Supplies",
+    "invoice_no": "IOS-1204",
+    "date": "2026-09-22",
+    "tax_id": "1527021-5",
+    "customer": "Zara Fashion Hub",
+    "subtotal": 348190.0,
+    "tax": 62674.2,
+    "total": 411864.2,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Box File Lever Arch",
+        "quantity": 2,
+        "unit_price": 420.0,
+        "amount": 840.0
+      },
+      {
+        "description": "Printer Toner 85A",
+        "quantity": 50,
+        "unit_price": 6800.0,
+        "amount": 340000.0
+      },
+      {
+        "description": "Ball Pens Blue (box of 50)",
+        "quantity": 1,
+        "unit_price": 750.0,
+        "amount": 750.0
+      },
+      {
+        "description": "A4 Paper Ream 80gsm",
+        "quantity": 4,
+        "unit_price": 1650.0,
+        "amount": 6600.0
+      }
+    ],
+    "notes": [
+      "printed total is 1,000 higher than subtotal + tax (should be flagged)"
+    ]
+  },
+  "photo_alnoor_INV-2063.jpg": {
+    "vendor": "Al-Noor Traders",
+    "invoice_no": "INV-2063",
+    "date": "2026-09-26",
+    "tax_id": "5076817-7",
+    "customer": "Green Valley Distributors",
+    "subtotal": 188720.0,
+    "tax": 33969.6,
+    "total": 222689.6,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Cooking Oil 5L tin",
+        "quantity": 12,
+        "unit_price": 2750.0,
+        "amount": 33000.0
+      },
+      {
+        "description": "Red Chilli Powder 1kg",
+        "quantity": 4,
+        "unit_price": 980.0,
+        "amount": 3920.0
+      },
+      {
+        "description": "Sugar 50kg sack",
+        "quantity": 20,
+        "unit_price": 7200.0,
+        "amount": 144000.0
+      },
+      {
+        "description": "Wheat Flour 20kg",
+        "quantity": 3,
+        "unit_price": 2600.0,
+        "amount": 7800.0
+      }
+    ],
+    "notes": []
+  },
+  "photo_swift_courier_SC-88257.jpg": {
+    "vendor": "Swift Courier Services",
+    "invoice_no": "SC-88257",
+    "date": "2026-09-27",
+    "tax_id": "8106470-6",
+    "customer": "NovaCart Online Store",
+    "subtotal": 21190.0,
+    "tax": 3390.4,
+    "total": 24580.4,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Return Handling Charges",
+        "quantity": 2,
+        "unit_price": 95.0,
+        "amount": 190.0
+      },
+      {
+        "description": "COD Deliveries Lahore (per parcel)",
+        "quantity": 50,
+        "unit_price": 180.0,
+        "amount": 9000.0
+      },
+      {
+        "description": "Fuel Surcharge",
+        "quantity": 10,
+        "unit_price": 1200.0,
+        "amount": 12000.0
+      }
+    ],
+    "notes": []
+  },
+  "photo_ravi_textiles_RT-3318.jpg": {
+    "vendor": "Ravi Textiles",
+    "invoice_no": "RT-3318",
+    "date": "2026-09-28",
+    "tax_id": "7754864-5",
+    "customer": "Zara Fashion Hub",
+    "subtotal": 35480.0,
+    "tax": 6031.6,
+    "total": 41511.6,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Dyeing Charges per kg",
+        "quantity": 50,
+        "unit_price": 180.0,
+        "amount": 9000.0
+      },
+      {
+        "description": "Cotton Lawn Fabric (meter)",
+        "quantity": 50,
+        "unit_price": 520.0,
+        "amount": 26000.0
+      },
+      {
+        "description": "Polyester Thread Cone",
+        "quantity": 2,
+        "unit_price": 240.0,
+        "amount": 480.0
+      }
+    ],
+    "notes": []
+  },
+  "scan_margalla_ME-5544.pdf": {
+    "vendor": "Margalla Electronics",
+    "invoice_no": "ME-5544",
+    "date": "2026-09-24",
+    "tax_id": "8077999-2",
+    "customer": "Bright Mart Superstore",
+    "subtotal": 49600.0,
+    "tax": 8928.0,
+    "total": 58528.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Wireless Earbuds Pro",
+        "quantity": 4,
+        "unit_price": 4850.0,
+        "amount": 19400.0
+      },
+      {
+        "description": "Phone Holder Car Mount",
+        "quantity": 20,
+        "unit_price": 850.0,
+        "amount": 17000.0
+      },
+      {
+        "description": "USB-C to Lightning Cable",
+        "quantity": 12,
+        "unit_price": 1100.0,
+        "amount": 13200.0
+      }
+    ],
+    "notes": []
+  },
+  "photo_blurry_margalla_ME-5560.jpg": {
+    "vendor": "Margalla Electronics",
+    "invoice_no": "ME-5560",
+    "date": "2026-09-29",
+    "tax_id": "1848731-8",
+    "customer": "Zara Fashion Hub",
+    "subtotal": 166100.0,
+    "tax": 29898.0,
+    "total": 195998.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Bluetooth Speaker Mini",
+        "quantity": 2,
+        "unit_price": 3350.0,
+        "amount": 6700.0
+      },
+      {
+        "description": "Power Bank 20000mAh",
+        "quantity": 12,
+        "unit_price": 5200.0,
+        "amount": 62400.0
+      },
+      {
+        "description": "Wireless Earbuds Pro",
+        "quantity": 20,
+        "unit_price": 4850.0,
+        "amount": 97000.0
+      }
+    ],
+    "notes": [
+      "deliberately blurry photo (should be flagged for review)"
+    ]
+  },
+  "crescent_invoice_copy_from_email.pdf": {
+    "vendor": "Crescent Packaging (Pvt) Ltd",
+    "invoice_no": "CP/26/0187",
+    "date": "2026-09-03",
+    "tax_id": "7022674-5",
+    "customer": "Zara Fashion Hub",
+    "subtotal": 22500.0,
+    "tax": 4050.0,
+    "total": 26550.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Bubble Wrap Roll 50m",
+        "quantity": 4,
+        "unit_price": 1950.0,
+        "amount": 7800.0
+      },
+      {
+        "description": "Stretch Film 18in",
+        "quantity": 6,
+        "unit_price": 1700.0,
+        "amount": 10200.0
+      },
+      {
+        "description": "Fragile Stickers (500)",
+        "quantity": 2,
+        "unit_price": 650.0,
+        "amount": 1300.0
+      },
+      {
+        "description": "Void Fill Paper Pack",
+        "quantity": 2,
+        "unit_price": 900.0,
+        "amount": 1800.0
+      },
+      {
+        "description": "Corrugated Box 18x12x12",
+        "quantity": 10,
+        "unit_price": 140.0,
+        "amount": 1400.0
+      }
+    ],
+    "notes": [
+      "duplicate of crescent_CP-26-0187.pdf (should be flagged)"
+    ]
+  }
+}

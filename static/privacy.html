@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy &amp; Data Handling · DocuFlow</title>
+  <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/ui.css">
+  <style>.doc { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; } .doc h2 { margin: 28px 0 8px; } .doc p, .doc li { color: var(--text-2); } .doc ul { padding-left: 20px; display: grid; gap: 6px; }</style>
+</head>
+<body>
+  <div class="doc">
+    <a class="brand" href="/"><span class="brand-mark">D</span><span>DocuFlow</span></a>
+    <h1 style="margin-top:28px">Privacy &amp; data handling</h1>
+    <p style="margin-top:8px">Short version: your documents are yours. We process them to produce your spreadsheet, keep them only as long as you choose, and never use them to train AI.</p>
+
+    <h2>What we store</h2>
+    <ul>
+      <li>The files you upload (PDFs, photos, scans) and page previews used on the review screen.</li>
+      <li>The values extracted from them and any corrections your team makes.</li>
+      <li>Your team's names, emails and roles, so we know who approved what.</li>
+    </ul>
+
+    <h2>How long we keep files</h2>
+    <p>An admin chooses the retention period in <b>Settings → Privacy</b>: delete right after download, after 7 days, or after 30 days. After that, original files and previews are permanently deleted. Extracted data stays in your history until you delete the batch.</p>
+
+    <h2>Who can see your data</h2>
+    <ul>
+      <li>Only signed-in members of your company account.</li>
+      <li>Each client company gets its own separate installation and database.</li>
+      <li>We access your data only if you ask us to help with a support issue.</li>
+    </ul>
+
+    <h2>AI processing</h2>
+    <p>When AI reading is switched on, page text or images are sent to our AI provider (Groq) only to read the document and are not used to train their models under their API terms. When it's switched off, everything is processed on our own server with no third party involved. Private (self-hosted) installation is available for sensitive data.</p>
+
+    <h2>Security</h2>
+    <ul><li>Encrypted connections (HTTPS) in production.</li><li>Passwords are stored as salted hashes, never in plain text.</li><li>Sign-in sessions expire after 14 days.</li></ul>
+
+    <h2>Deleting your data</h2>
+    <p>Delete any batch from <b>History</b> at any time, or ask us to delete your whole account. We confirm deletion in writing.</p>
+
+    <p class="small muted" style="margin-top:32px">This statement describes how the software works. It is not legal advice; adapt it with your own legal adviser before signing client contracts.</p>
+  </div>
+</body>
+</html>

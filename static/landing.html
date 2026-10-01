@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DocuFlow: invoices to Excel, no typing</title>
+  <meta name="description" content="Upload invoices, bills and forms. In minutes you get a clean Excel sheet. Every value checked, totals re-added, duplicates caught.">
+  <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/ui.css">
+  <style>
+    body { background: #fff; }
+    .l-nav { display: flex; align-items: center; justify-content: space-between; max-width: 1160px; margin: 0 auto; padding: 18px 24px; }
+    .hero { max-width: 1160px; margin: 0 auto; padding: 40px 24px 20px; display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: 46px; line-height: 1.08; letter-spacing: -0.03em; }
+    .hero p.lead { font-size: 19px; color: var(--text-2); margin: 18px 0 26px; }
+    .eyebrow { display: inline-flex; gap: 8px; align-items: center; background: var(--accent-50); color: var(--accent-600); padding: 5px 12px; border-radius: 999px; font-weight: 600; font-size: 13px; margin-bottom: 18px; }
+    .shot { border-radius: 14px; box-shadow: 0 20px 60px rgba(16,24,40,.18); border: 1px solid var(--border); overflow: hidden; background: #fff; }
+    .shot img, .shot video { display: block; width: 100%; }
+    section { max-width: 1160px; margin: 0 auto; padding: 64px 24px; }
+    .section-title { text-align: center; max-width: 640px; margin: 0 auto 36px; }
+    .section-title h2 { font-size: 32px; letter-spacing: -0.02em; }
+    .section-title p { color: var(--text-2); margin-top: 10px; font-size: 17px; }
+    .benefit { padding: 26px; }
+    .benefit .bi { width: 46px; height: 46px; border-radius: 12px; background: var(--accent-50); color: var(--accent); display: grid; place-items: center; margin-bottom: 14px; }
+    .benefit .bi svg { width: 24px; height: 24px; }
+    .benefit h3 { font-size: 18px; margin-bottom: 6px; }
+    .benefit p { color: var(--text-2); }
+    .band { background: var(--bg); }
+    .numbers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .numbers .card { padding: 22px; text-align: center; }
+    .numbers .big { font-size: 34px; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; }
+    .price { padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+    .price.featured { border: 2px solid var(--accent); box-shadow: var(--shadow); }
+    .price ul { margin: 0; padding-left: 18px; color: var(--text-2); display: grid; gap: 6px; }
+    .price .amt { font-size: 28px; font-weight: 800; }
+    .steps { counter-reset: s; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .step { padding: 24px; }
+    .step::before { counter-increment: s; content: counter(s); width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 700; margin-bottom: 12px; }
+    .cta { text-align: center; background: var(--accent); color: #fff; border-radius: 20px; padding: 54px 24px; }
+    .cta h2 { font-size: 32px; } .cta p { opacity: .9; margin: 10px 0 24px; font-size: 17px; }
+    .cta .btn { background: #fff; color: var(--accent); border-color: #fff; }
+    footer { border-top: 1px solid var(--border); padding: 26px 24px; text-align: center; color: var(--text-3); font-size: 14px; }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 16px; } .hero h1 { font-size: 34px; }
+      .numbers { grid-template-columns: repeat(2, 1fr); } .steps { grid-template-columns: 1fr; }
+      section { padding: 44px 16px; } .l-nav { padding: 14px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="l-nav"><a class="brand" href="/landing"><span class="brand-mark">D</span><span>DocuFlow</span></a>
+    <div class="row"><a class="btn btn-ghost hide-sm" href="#pricing">Pricing</a><a class="btn btn-primary" href="/#/login">Open live demo</a></div></nav>
+
+  <div class="hero">
+    <div>
+      <span class="eyebrow">For accountants, e-commerce &amp; logistics teams</span>
+      <h1>Upload your invoices. Get a clean Excel sheet. No typing.</h1>
+      <p class="lead">Invoices, receipts and purchase orders (PDFs, scans or phone photos) turn into a tidy spreadsheet in minutes. Every value is checked before you export.</p>
+      <div class="row wrap"><a class="btn btn-primary btn-lg cta-link" href="/#/login">Try free on 20 invoices</a><a class="btn btn-lg" href="#demo">Watch the 2-minute demo</a></div>
+      <div class="privacy-line" style="justify-content:flex-start;margin-top:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Private by default. Files deleted on your schedule. Never used to train AI.</span></div>
+    </div>
+    <div class="shot"><img src="/static/img/screens/review.png" alt="DocuFlow review screen: original invoice on the left with highlighted values, extracted fields on the right"></div>
+  </div>
+
+  <section>
+    <div class="section-title"><h2>Why teams switch to DocuFlow</h2><p>Your staff stop copying numbers and start checking them.</p></div>
+    <div class="grid grid-3">
+      <div class="card benefit"><div class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Hours of typing, gone</h3><p>Drop 50 invoices at once. Invoice number, date, vendor, tax ID, line items and totals land in Excel in minutes.</p></div>
+      <div class="card benefit"><div class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Mistakes caught for you</h3><p>Totals are re-added, duplicates are detected and unclear values are marked orange, so wrong numbers never slip into your books.</p></div>
+      <div class="card benefit"><div class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 3v18"/></svg></div>
+        <h3>Your Excel, your columns</h3><p>Match your own template: column names, order and date format. Download Excel or CSV, ready for your accounting software.</p></div>
+    </div>
+  </section>
+
+  <section class="band" id="demo" style="max-width:none">
+    <div style="max-width:1000px;margin:0 auto">
+      <div class="section-title"><h2>See it in 2 minutes</h2><p>Upload, review, catch a problem, download Excel.</p></div>
+      <div class="shot" id="videoBox"><video controls preload="none" poster="/static/img/screens/summary.png" src="/static/media/demo.webm"></video></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Measured on our test set</h2><p id="resultsNote">Real numbers from our evaluation script. We'll run the same test on 20 of your own invoices for free.</p></div>
+    <div class="numbers" id="numbers"></div>
+  </section>
+
+  <section class="band" style="max-width:none"><div style="max-width:1160px;margin:0 auto">
+    <div class="section-title"><h2>How it works</h2></div>
+    <div class="steps">
+      <div class="card step"><h3>Upload</h3><p class="muted">Drag in PDFs, scans, phone photos or a ZIP folder. Up to 100 at once.</p></div>
+      <div class="card step"><h3>Review</h3><p class="muted">Check only what's flagged. Click any value to see exactly where it came from on the page.</p></div>
+      <div class="card step"><h3>Export</h3><p class="muted">Download Excel with Invoices, Line Items and Needs Review sheets, or CSV.</p></div>
+    </div></div>
+  </section>
+
+  <section id="pricing">
+    <div class="section-title"><h2>Simple plans</h2><p>One-time setup, then a monthly plan. Start with a low-cost pilot.</p></div>
+    <div class="grid grid-3">
+      <div class="card price"><h3>Starter</h3><div class="amt">PKR 15,000<span class="small muted"> /month</span></div>
+        <ul><li>Up to 500 documents a month</li><li>Excel &amp; CSV export</li><li>Standard fields and line items</li><li>Email support</li></ul></div>
+      <div class="card price featured"><span class="badge info plain" style="align-self:flex-start">Most popular</span><h3>Business</h3><div class="amt">PKR 35,000<span class="small muted"> /month</span></div>
+        <ul><li>Up to 2,000 documents a month</li><li>Custom fields &amp; templates</li><li>Team access with roles</li><li>Priority support</li></ul></div>
+      <div class="card price"><h3>Enterprise</h3><div class="amt">Custom</div>
+        <ul><li>High volume</li><li>Google Sheets &amp; accounting integrations</li><li>Email inbox automation</li><li>Private hosting</li></ul></div>
+    </div>
+    <p class="small muted" style="text-align:center;margin-top:14px">Prices exclude one-time setup. Pilot for your first month available.</p>
+  </section>
+
+  <section><div class="cta">
+    <h2>Send us 20 invoices. We'll send back the Excel.</h2>
+    <p>Free, no commitment. Your files are deleted after the test.</p>
+    <a class="btn btn-lg cta-link" href="/#/login">Try free on 20 invoices</a>
+  </div></section>
+
+  <footer>DocuFlow · <a href="/privacy">Privacy &amp; data handling</a> · <a href="/#/login">Live demo</a></footer>
+
+  <script>
+    fetch("/api/app-info").then((r) => r.json()).then((i) => {
+      if (i.accent_color) document.documentElement.style.setProperty("--accent", i.accent_color);
+      let href = null;
+      if (i.contact_whatsapp) href = `https://wa.me/${i.contact_whatsapp}?text=${encodeURIComponent("Hi, I'd like to try DocuFlow free on 20 of our invoices.")}`;
+      else if (i.contact_email) href = `mailto:${i.contact_email}?subject=${encodeURIComponent("DocuFlow free test on 20 invoices")}`;
+      if (href) document.querySelectorAll(".cta-link").forEach((a) => { a.href = href; a.target = "_blank"; });
+    }).catch(() => {});
+    fetch("/static/results.json").then((r) => (r.ok ? r.json() : null)).then((d) => {
+      if (!d) { document.getElementById("numbers").closest("section").remove(); return; }
+      const s = d.summary;
+      const items = [[`${s.field_accuracy_readable}%`, "fields read correctly (readable documents)"], [`${s.avg_seconds_per_doc}s`, "average per document"],
+        [s.totals_mismatch_caught, "wrong totals caught"], [`${s.documents}`, "test documents incl. photos & scans"]];
+      document.getElementById("numbers").innerHTML = items.map(([n, l]) => `<div class="card"><div class="big">${n}</div><div class="muted small">${l}</div></div>`).join("");
+    }).catch(() => {});
+    const v = document.querySelector("#videoBox video");
+    fetch(v.getAttribute("src"), { method: "HEAD" }).then((r) => { if (!r.ok) throw 0; }).catch(() => {
+      document.getElementById("videoBox").innerHTML = `<a href="/#/login"><img src="/static/img/screens/summary.png" alt="Batch summary screen"></a>`;
+    });
+  </script>
+</body>
+</html>
