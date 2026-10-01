@@ -71,20 +71,21 @@ For messy or unusual layouts, add a free Groq key:
 
 Text PDFs go to `llama-3.3-70b-versatile`; photos and scans go to the vision model `meta-llama/llama-4-scout-17b-16e-instruct` (change them in `.env` if Groq renames models). If a Groq call fails (rate limit, network), that document automatically falls back to the offline reader and says so on the review screen. Run `python -m scripts.evaluate` again with the key set to measure AI accuracy.
 
-## Free live demo on Hugging Face Spaces
+## Free live demo links
 
-No card needed. The demo data rebuilds itself on every start, so the link always shows a clean demo.
+### GitHub Codespaces (free, all features)
 
-1. Create a free account at https://huggingface.co and a token with **Write** access at https://huggingface.co/settings/tokens.
-2. Put optional secrets in `.env` (`GROQ_API_KEY` (optional, AI reading), `CONTACT_EMAIL` / `CONTACT_WHATSAPP`). They are stored as Space secrets, never in the code.
-3. Run:
-   ```bash
-   pip install huggingface_hub
-   python scripts/deploy_hf.py --user YOUR_HF_USERNAME --token hf_xxx
-   ```
-4. Wait for the first build (a few minutes). Your link: `https://YOUR_HF_USERNAME-docuflow.hf.space`
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/daniyal-nawaz97/docuflow-invoice-extractor?quickstart=1)
 
-Free Spaces sleep after about 2 days without visitors; open the link a minute before a client meeting to wake it up.
+1. Click the button above (or **Code → Codespaces → Create codespace on main**).
+2. Wait about 3–5 minutes the first time while it installs; the app starts by itself on port 8001.
+3. Open the **Ports** tab, check port 8001 shows **Public** (right-click → Port visibility → Public if not), and copy its address. It looks like `https://<name>-8001.app.github.dev`. Send that link to the client.
+
+Free GitHub accounts get about 60 hours a month on a 2-core machine (30 hours of a running Codespace). A Codespace stops after 30 minutes without activity; **stop it yourself after the meeting** (Codespaces page → ⋯ → Stop) to save hours. Restarting it brings the same link back, with fresh demo data.
+
+### Why not Render's free plan?
+
+Reading photos with OCR needs about 600 MB of memory at peak, more than the 512 MB of Render's free plan. Use Codespaces for free demos, or a small paid server (~$5/month, see **Deploying**) for an always-on link.
 
 ## Deploying a live demo link
 
