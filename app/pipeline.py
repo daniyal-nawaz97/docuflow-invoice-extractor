@@ -195,11 +195,8 @@ def process_document(doc: dict, doc_type: str, default_currency: str):
         out = rules_out
         if ai_enabled():
             try:
-                out = extract_ai.extract(rr, lines, doc_type)
+                out = extract_ai.merge(extract_ai.extract(rr, lines, doc_type), rules_out)
                 engine = "ai"
-                # AI rarely misses values the rules found with certainty; fill gaps from the rules
-                for k, v in rules_out["fields"].items():
-                    out["fields"].setdefault(k, v)
             except extract_ai.AIError:
                 fallback = True
 

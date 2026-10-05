@@ -70,10 +70,7 @@ def main():
         engine = "offline"
         if use_ai:
             try:
-                ai = extract_ai.extract(rr, lines, "invoice")
-                for k, v in out["fields"].items():
-                    ai["fields"].setdefault(k, v)
-                out, engine = ai, "ai"
+                out, engine = extract_ai.merge(extract_ai.extract(rr, lines, "invoice"), out), "ai"
             except extract_ai.AIError as e:
                 engine = f"offline (AI failed: {str(e)[:40]})"
         dt = time.time() - t0

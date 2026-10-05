@@ -71,7 +71,7 @@ For messy or unusual layouts, add a free Groq key:
    ```
 3. Restart `./run.sh`. Settings → Reading engine now shows **AI reading is on**.
 
-Text PDFs go to `llama-3.3-70b-versatile`; photos and scans go to the vision model `meta-llama/llama-4-scout-17b-16e-instruct` (change them in `.env` if Groq renames models). If a Groq call fails (rate limit, network), that document automatically falls back to the offline reader and says so on the review screen. Run `python -m scripts.evaluate` again with the key set to measure AI accuracy.
+Text PDFs go to `openai/gpt-oss-120b`; photos and scans go to the vision model `qwen/qwen3.8-27b` (change them in `.env` if Groq renames models). Groq's free plan lets the vision model write only about 1,000 tokens a minute (1-2 photos), so when it is busy the photo's OCR text is read by the text model instead. If a Groq call still fails (rate limit, network), that document automatically falls back to the offline reader and says so on the review screen. Run `python -m scripts.evaluate` again with the key set to measure AI accuracy.
 
 ## Free live demo links
 

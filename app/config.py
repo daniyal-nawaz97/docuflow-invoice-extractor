@@ -17,8 +17,10 @@ STATIC_DIR = BASE_DIR / "static"
 
 # Groq (free tier). Without a key the app uses its built-in offline reader.
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "").strip()
-GROQ_TEXT_MODEL = os.getenv("GROQ_TEXT_MODEL", "llama-3.3-70b-versatile")
-GROQ_VISION_MODEL = os.getenv("GROQ_VISION_MODEL", "meta-llama/llama-4-scout-17b-16e-instruct")
+GROQ_TEXT_MODEL = os.getenv("GROQ_TEXT_MODEL", "openai/gpt-oss-120b")
+GROQ_VISION_MODEL = os.getenv("GROQ_VISION_MODEL", "qwen/qwen3.8-27b")
+# used when the text model is busy (each model has its own free-tier limit)
+GROQ_FALLBACK_MODEL = os.getenv("GROQ_FALLBACK_MODEL", "openai/gpt-oss-20b")
 
 DEMO_EMAIL = os.getenv("DEMO_EMAIL", "demo@docuflow.app")
 DEMO_PASSWORD = os.getenv("DEMO_PASSWORD", "demo1234")
