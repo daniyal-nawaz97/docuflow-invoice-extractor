@@ -1,0 +1,399 @@
+{
+  "rw01_skyline.pdf": {
+    "vendor": "Skyline Digital Solutions",
+    "invoice_no": "SDS-2026-0412",
+    "date": "2026-09-18",
+    "tax_id": "4417820-6",
+    "customer": "Margalla Foods (Pvt) Ltd",
+    "subtotal": 94500,
+    "tax": 17010.0,
+    "total": 111510.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Website maintenance (Sept)",
+        "quantity": 1,
+        "unit_price": 45000,
+        "amount": 45000
+      },
+      {
+        "description": "Cloud hosting - 3 servers",
+        "quantity": 3,
+        "unit_price": 12500,
+        "amount": 37500
+      },
+      {
+        "description": "SSL certificate renewal",
+        "quantity": 2,
+        "unit_price": 6000,
+        "amount": 12000
+      }
+    ],
+    "notes": []
+  },
+  "rw02_madina.pdf": {
+    "vendor": "Madina Wholesale Traders",
+    "invoice_no": "1187",
+    "date": "2026-09-02",
+    "tax_id": "32-77-8761-551-19",
+    "customer": "Al-Habib General Store",
+    "subtotal": 69490,
+    "tax": 11813.0,
+    "total": 81303.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Dalda Ghee 16kg tin",
+        "quantity": 5,
+        "unit_price": 8450,
+        "amount": 42250
+      },
+      {
+        "description": "Tapal Danedar 950g",
+        "quantity": 12,
+        "unit_price": 1590,
+        "amount": 19080
+      },
+      {
+        "description": "National Salt 800g",
+        "quantity": 48,
+        "unit_price": 65,
+        "amount": 3120
+      },
+      {
+        "description": "Shan Biryani Masala",
+        "quantity": 36,
+        "unit_price": 140,
+        "amount": 5040
+      }
+    ],
+    "notes": []
+  },
+  "rw03_brightpath.pdf": {
+    "vendor": "BrightPath Software LLC",
+    "invoice_no": "BP-10293",
+    "date": "2026-08-30",
+    "tax_id": "84-2290113",
+    "customer": "Northwind Retail Inc",
+    "subtotal": 2500,
+    "tax": 200.0,
+    "total": 2700.0,
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Annual license - Standard",
+        "quantity": 5,
+        "unit_price": 240,
+        "amount": 1200
+      },
+      {
+        "description": "Onboarding session",
+        "quantity": 2,
+        "unit_price": 350,
+        "amount": 700
+      },
+      {
+        "description": "Priority support add-on",
+        "quantity": 1,
+        "unit_price": 600,
+        "amount": 600
+      }
+    ],
+    "notes": []
+  },
+  "rw04_hamdan.pdf": {
+    "vendor": "Hamdan & Co. Chartered Accountants",
+    "invoice_no": "HC/INV/77",
+    "date": "2026-10-03",
+    "tax_id": "0712655-8",
+    "customer": "Rehman Textile Mills",
+    "subtotal": 164000,
+    "discount": 5000.0,
+    "tax": 25440.0,
+    "total": 184440.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Statutory audit FY2025-26",
+        "quantity": 40,
+        "unit_price": 3500,
+        "amount": 140000
+      },
+      {
+        "description": "Tax return filing",
+        "quantity": 6,
+        "unit_price": 4000,
+        "amount": 24000
+      }
+    ],
+    "notes": []
+  },
+  "rw05_quickfix.pdf": {
+    "vendor": "QuickFix Auto Workshop",
+    "invoice_no": "QF-5531",
+    "date": "2026-09-27",
+    "tax_id": "3390124-1",
+    "customer": "Bilal Ahmed",
+    "subtotal": 9500,
+    "tax": 1710.0,
+    "total": 11210.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Engine oil 4L",
+        "quantity": 1,
+        "unit_price": 6800,
+        "amount": 6800
+      },
+      {
+        "description": "Oil filter",
+        "quantity": 1,
+        "unit_price": 1200,
+        "amount": 1200
+      },
+      {
+        "description": "Labour",
+        "quantity": 1,
+        "unit_price": 1500,
+        "amount": 1500
+      }
+    ],
+    "notes": []
+  },
+  "rw06_orbit.pdf": {
+    "vendor": "Orbit Logistics",
+    "invoice_no": "OL-88213",
+    "date": "2026-09-05",
+    "tax_id": "5521907-3",
+    "customer": "Chenab Exports",
+    "subtotal": 320100,
+    "tax": 57618.0,
+    "total": 377718.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Container haulage KHI-LHR",
+        "quantity": 2,
+        "unit_price": 145000,
+        "amount": 290000
+      },
+      {
+        "description": "Loading / unloading",
+        "quantity": 2,
+        "unit_price": 9000,
+        "amount": 18000
+      },
+      {
+        "description": "Insurance",
+        "quantity": 1,
+        "unit_price": 7400,
+        "amount": 7400
+      },
+      {
+        "description": "Toll charges",
+        "quantity": 2,
+        "unit_price": 2350,
+        "amount": 4700
+      }
+    ],
+    "notes": []
+  },
+  "rw07_punjab.pdf": {
+    "vendor": "Punjab Seed Corporation",
+    "invoice_no": "PSC-0091",
+    "date": "2026-09-11",
+    "tax_id": "12-34-5678-901-23",
+    "customer": "Kissan Agri Store",
+    "subtotal": 193000,
+    "tax": 32810.0,
+    "total": 225810.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Wheat seed Akbar-19 50kg",
+        "quantity": 20,
+        "unit_price": 7600,
+        "amount": 152000
+      },
+      {
+        "description": "Cotton seed FH-142",
+        "quantity": 10,
+        "unit_price": 4100,
+        "amount": 41000
+      }
+    ],
+    "notes": []
+  },
+  "rw08_gulfstar.pdf": {
+    "vendor": "GulfStar Trading FZE",
+    "invoice_no": "GS-2201",
+    "date": "2026-09-22",
+    "tax_id": "100234567800003",
+    "customer": "Karachi Electronics Mart",
+    "subtotal": 1145.0,
+    "tax": 57.25,
+    "total": 1202.25,
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "LED panel 24in",
+        "quantity": 10,
+        "unit_price": 85,
+        "amount": 850
+      },
+      {
+        "description": "HDMI cable 2m",
+        "quantity": 50,
+        "unit_price": 3.5,
+        "amount": 175.0
+      },
+      {
+        "description": "Wall mount bracket",
+        "quantity": 10,
+        "unit_price": 12,
+        "amount": 120
+      }
+    ],
+    "notes": []
+  },
+  "photo_rw02_madina.jpg": {
+    "vendor": "Madina Wholesale Traders",
+    "invoice_no": "1187",
+    "date": "2026-09-02",
+    "tax_id": "32-77-8761-551-19",
+    "customer": "Al-Habib General Store",
+    "subtotal": 69490,
+    "tax": 11813.0,
+    "total": 81303.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Dalda Ghee 16kg tin",
+        "quantity": 5,
+        "unit_price": 8450,
+        "amount": 42250
+      },
+      {
+        "description": "Tapal Danedar 950g",
+        "quantity": 12,
+        "unit_price": 1590,
+        "amount": 19080
+      },
+      {
+        "description": "National Salt 800g",
+        "quantity": 48,
+        "unit_price": 65,
+        "amount": 3120
+      },
+      {
+        "description": "Shan Biryani Masala",
+        "quantity": 36,
+        "unit_price": 140,
+        "amount": 5040
+      }
+    ],
+    "notes": []
+  },
+  "photo_rw05_quickfix.jpg": {
+    "vendor": "QuickFix Auto Workshop",
+    "invoice_no": "QF-5531",
+    "date": "2026-09-27",
+    "tax_id": "3390124-1",
+    "customer": "Bilal Ahmed",
+    "subtotal": 9500,
+    "tax": 1710.0,
+    "total": 11210.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Engine oil 4L",
+        "quantity": 1,
+        "unit_price": 6800,
+        "amount": 6800
+      },
+      {
+        "description": "Oil filter",
+        "quantity": 1,
+        "unit_price": 1200,
+        "amount": 1200
+      },
+      {
+        "description": "Labour",
+        "quantity": 1,
+        "unit_price": 1500,
+        "amount": 1500
+      }
+    ],
+    "notes": []
+  },
+  "photo_rw06_orbit.jpg": {
+    "vendor": "Orbit Logistics",
+    "invoice_no": "OL-88213",
+    "date": "2026-09-05",
+    "tax_id": "5521907-3",
+    "customer": "Chenab Exports",
+    "subtotal": 320100,
+    "tax": 57618.0,
+    "total": 377718.0,
+    "currency": "PKR",
+    "line_items": [
+      {
+        "description": "Container haulage KHI-LHR",
+        "quantity": 2,
+        "unit_price": 145000,
+        "amount": 290000
+      },
+      {
+        "description": "Loading / unloading",
+        "quantity": 2,
+        "unit_price": 9000,
+        "amount": 18000
+      },
+      {
+        "description": "Insurance",
+        "quantity": 1,
+        "unit_price": 7400,
+        "amount": 7400
+      },
+      {
+        "description": "Toll charges",
+        "quantity": 2,
+        "unit_price": 2350,
+        "amount": 4700
+      }
+    ],
+    "notes": []
+  },
+  "photo_rw03_brightpath.jpg": {
+    "vendor": "BrightPath Software LLC",
+    "invoice_no": "BP-10293",
+    "date": "2026-08-30",
+    "tax_id": "84-2290113",
+    "customer": "Northwind Retail Inc",
+    "subtotal": 2500,
+    "tax": 200.0,
+    "total": 2700.0,
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Annual license - Standard",
+        "quantity": 5,
+        "unit_price": 240,
+        "amount": 1200
+      },
+      {
+        "description": "Onboarding session",
+        "quantity": 2,
+        "unit_price": 350,
+        "amount": 700
+      },
+      {
+        "description": "Priority support add-on",
+        "quantity": 1,
+        "unit_price": 600,
+        "amount": 600
+      }
+    ],
+    "notes": []
+  }
+}

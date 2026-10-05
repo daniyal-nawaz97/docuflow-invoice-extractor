@@ -13,7 +13,7 @@ DocuFlow, a web app where staff drop in a whole month of bills at once. It reads
 | | Before (manual) | With DocuFlow |
 |---|---|---|
 | Time for 19 documents | ~95 minutes of typing | **27 seconds** processing + a few minutes reviewing flagged files |
-| Field accuracy (readable documents) | depends on the typist | **99.4%** of fields correct |
+| Field accuracy (readable documents) | depends on the typist | **100%** of fields correct |
 | Documents correct with zero edits | n/a | **17 of 19** |
 | Invoice with wrong printed total | easily missed | **caught** (red flag, reason shown) |
 | Same invoice received twice | easily missed | **caught** (duplicate warning) |

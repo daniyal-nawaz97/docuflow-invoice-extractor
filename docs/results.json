@@ -1,15 +1,15 @@
 {
   "summary": {
-    "date": "2026-09-30",
+    "date": "2026-10-05",
     "engine": "Offline reader (no AI)",
     "documents": 19,
-    "field_accuracy_all": 95.3,
-    "field_accuracy_readable": 99.4,
-    "documents_fully_correct": 17,
-    "documents_fully_correct_readable": "17/18",
+    "field_accuracy_all": 95.9,
+    "field_accuracy_readable": 100.0,
+    "documents_fully_correct": 18,
+    "documents_fully_correct_readable": "18/18",
     "line_items_correct_docs": 18,
-    "avg_seconds_per_doc": 1.41,
-    "total_seconds": 26.7,
+    "avg_seconds_per_doc": 1.91,
+    "total_seconds": 36.4,
     "manual_minutes_estimate": 95.0,
     "totals_mismatch_caught": "1/1",
     "blurry_photo_flagged": "1/1",
@@ -18,7 +18,7 @@
       "invoice_no": 94.7,
       "date": 94.7,
       "tax_id": 94.7,
-      "customer": 89.5,
+      "customer": 94.7,
       "subtotal": 94.7,
       "tax": 94.7,
       "total": 94.7,
@@ -36,7 +36,7 @@
       "missed": [],
       "items_correct": true,
       "items": "4/4",
-      "seconds": 0.73
+      "seconds": 0.24
     },
     {
       "file": "alnoor_INV-2057.pdf",
@@ -102,7 +102,7 @@
       "missed": [],
       "items_correct": true,
       "items": "5/5",
-      "seconds": 0.07
+      "seconds": 0.09
     },
     {
       "file": "ravi_textiles_RT-3302.pdf",
@@ -113,7 +113,7 @@
       "missed": [],
       "items_correct": true,
       "items": "4/4",
-      "seconds": 0.08
+      "seconds": 0.07
     },
     {
       "file": "global_imports_GTI-7781.pdf",
@@ -135,7 +135,7 @@
       "missed": [],
       "items_correct": true,
       "items": "32/32",
-      "seconds": 0.16
+      "seconds": 0.17
     },
     {
       "file": "barkat_karyana_BK-0415_urdu.pdf",
@@ -146,7 +146,7 @@
       "missed": [],
       "items_correct": true,
       "items": "5/5",
-      "seconds": 0.07
+      "seconds": 0.08
     },
     {
       "file": "swift_courier_SC-88240.pdf",
@@ -157,7 +157,7 @@
       "missed": [],
       "items_correct": true,
       "items": "4/4",
-      "seconds": 0.06
+      "seconds": 0.07
     },
     {
       "file": "indus_office_IOS-1204_totals_wrong.pdf",
@@ -179,7 +179,7 @@
       "missed": [],
       "items_correct": true,
       "items": "4/4",
-      "seconds": 5.64
+      "seconds": 10.96
     },
     {
       "file": "photo_swift_courier_SC-88257.jpg",
@@ -190,7 +190,7 @@
       "missed": [],
       "items_correct": true,
       "items": "3/3",
-      "seconds": 5.53
+      "seconds": 3.93
     },
     {
       "file": "photo_ravi_textiles_RT-3318.jpg",
@@ -201,20 +201,18 @@
       "missed": [],
       "items_correct": true,
       "items": "3/3",
-      "seconds": 5.61
+      "seconds": 8.65
     },
     {
       "file": "scan_margalla_ME-5544.pdf",
       "kind": "scan",
       "engine": "offline",
-      "fields_correct": 8,
+      "fields_correct": 9,
       "fields_total": 9,
-      "missed": [
-        "customer"
-      ],
+      "missed": [],
       "items_correct": true,
       "items": "3/3",
-      "seconds": 5.96
+      "seconds": 9.67
     },
     {
       "file": "photo_blurry_margalla_ME-5560.jpg",
@@ -233,7 +231,7 @@
       ],
       "items_correct": false,
       "items": "0/3",
-      "seconds": 2.22
+      "seconds": 1.84
     },
     {
       "file": "crescent_invoice_copy_from_email.pdf",
@@ -244,7 +242,7 @@
       "missed": [],
       "items_correct": true,
       "items": "5/5",
-      "seconds": 0.08
+      "seconds": 0.11
     }
   ]
 }

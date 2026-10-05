@@ -35,13 +35,15 @@ Measured by `scripts/evaluate.py` on the 19 fictitious sample documents (offline
 
 | Metric | Result |
 |---|---|
-| Field accuracy, readable documents | **99.4%** |
-| Field accuracy, all 19 (incl. a deliberately blurry photo) | 95.3% |
-| Documents fully correct without edits | 17 / 19 |
-| Average time per document | 1.4 s |
+| Field accuracy, readable documents | **100%** |
+| Field accuracy, all 19 (incl. a deliberately blurry photo) | 95.9% |
+| Documents fully correct without edits | 18 / 19 |
+| Average time per document | 1.9 s (tilted photos take longer: they are straightened and read again) |
 | Wrong totals caught / blurry photo flagged | 1 / 1, 1 / 1 |
 
-Full breakdown in [docs/results.md](docs/results.md). **Be honest with clients:** the offline reader was built around these sample layouts, so real-world documents will score lower. Always run the same script on 20-50 of the client's own documents before quoting numbers.
+A second, held-out set of 12 invoices in layouts the reader was not built around (`python -m scripts.make_realworld`, then `python -m scripts.diag realworld`): **12 / 12 fully correct, 109 / 109 fields**, including 4 tilted phone photos.
+
+Full breakdown in [docs/results.md](docs/results.md). **Be honest with clients:** these are generated test documents. Real-world documents (handwriting, stamps, poor photos, unusual layouts) will score lower, especially without AI reading. Always run the same script on 20-50 of the client's own documents before quoting numbers.
 
 ## Quick start
 

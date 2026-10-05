@@ -62,6 +62,11 @@ def locate(lines, key, value, hint_line=None, prefer_last=False):
         needle = re.sub(r"[^a-z0-9]", "", str(value).lower())
     else:
         needle = re.sub(r"[^a-z0-9]", "", str(value).lower())
+    if " | " in str(value):  # a form table row: find its first readable cell
+        for part in str(value).split(" | "):
+            if len(re.sub(r"[^a-z0-9]", "", part.lower())) >= 2:
+                return locate(lines, key, part, hint_line, prefer_last)
+        return None
     if len(needle) < 2:
         return None
     for ln in ordered:
@@ -100,7 +105,9 @@ def run_checks(doc_type, fields, items, loc, read_info):
             c["page"], c["box"], conf = loc[k]
         else:
             conf = None
-        if v in (None, ""):
+        if doc_type == "form" and isinstance(v, str) and v and not re.sub(r"[-—|\s]", "", v):
+            c = {"status": "empty", "reason": ""}  # a blank cell on the form ("-")
+        elif v in (None, ""):
             if k in ("discount",):
                 c = {"status": "empty", "reason": ""}
             elif k in required:
@@ -130,6 +137,8 @@ def run_checks(doc_type, fields, items, loc, read_info):
             ic = {"status": "warn", "reason": "Amount missing"}
         elif q is not None and u is not None and abs(q * u - a) > max(0.05, 0.005 * a):
             ic = {"status": "warn", "reason": f"{q:g} × {fmt_money(u)} = {fmt_money(q * u)}, not {fmt_money(a)}"}
+        elif it.get("_qty_inferred"):
+            ic = {"status": "warn", "reason": "Quantity wasn't readable, so it was worked out from amount ÷ price. Please check."}
         elif it.get("_conf", 1) < LOW_CONF:
             ic = {"status": "warn", "reason": "Hard to read. Please check."}
         item_checks.append(ic)
@@ -152,6 +161,11 @@ def run_checks(doc_type, fields, items, loc, read_info):
         warnings.append({"type": "quality", "text": "We could hardly read this document. Please type the values, or upload a clearer copy."})
     if read_info.get("fallback"):
         warnings.append({"type": "info", "text": "AI reading was unavailable, so the basic reader was used. Please check values."})
+    if doc_type in ("invoice", "receipt", "purchase_order") and not items and not fields.get("invoice_no") and not fields.get("date") \
+            and not read_info.get("unreadable"):
+        kind = {"invoice": "an invoice", "receipt": "a receipt", "purchase_order": "a purchase order"}[doc_type]
+        warnings.append({"type": "quality", "text": f"This doesn't look like {kind}: no number, date or line items were found. "
+                                                    "If it's a form, report card, certificate or other document, upload it again with Document type: Form."})
     return checks, item_checks, warnings
 
 

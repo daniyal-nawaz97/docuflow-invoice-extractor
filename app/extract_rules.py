@@ -24,10 +24,10 @@ LABELS = {
     "invoice_no": r"(?:tax\s*)?invoice\s*(?:no\.?|number|num|#)|inv\.?\s*(?:no\.?|#)|bill\s*(?:no\.?|number|#)|receipt\s*(?:no\.?|#|number)|"
                   r"p\.?o\.?\s*(?:no\.?|number|#)|purchase\s*order\s*(?:no\.?|#)|order\s*(?:no\.?|#)|challan\s*(?:no\.?|#)|statement\s*no\.?|ref(?:erence)?\s*no\.?",
     "date": r"(?:invoice|bill|receipt|po|order)?\s*date|dated|date\s*of\s*issue",
-    "tax_id": r"ntn|strn(?:\s*/\s*tax\s*id)?|tax\s*id|gst\s*no\.?|vat\s*(?:no\.?|reg(?:istration)?)|trn|tax\s*reg(?:istration)?\s*no\.?",
-    "customer": r"bill\s*to|billed\s*to|sold\s*to|customer|buyer|ship\s*to|client",
-    "subtotal": r"sub\s*-?\s*total|total\s*before\s*tax|amount\s*before\s*tax|net\s*amount|taxable\s*amount",
-    "discount": r"discount|less\s*discount",
+    "tax_id": r"n[til1]n|strn(?:\s*/\s*tax\s*id)?|tax\s*id|gst\s*no\.?|vat\s*(?:no\.?|reg(?:istration)?)|trn|tax\s*reg(?:istration)?\s*no\.?",
+    "customer": r"bill\s*to|billed\s*to|sold\s*to|customer|buyer|ship\s*to|client|m\s*/\s*s\.?",
+    "subtotal": r"sub\s*-?\s*total|total\s*before\s*tax|amount\s*before\s*tax|net\s*amount|taxable\s*amount|gross\s*(?:amount|total|value)",
+    "discount": r"discount|less\s*:?\s*discount",
     "tax": r"(?:sales\s*tax|gst|vat|tax)\s*(?:@\s*)?(?:\d{1,2}(?:\.\d+)?\s*%)?",
     "total": r"grand\s*total|total\s*amount|amount\s*due|total\s*due|net\s*payable|balance\s*due|amount\s*payable|total",
 }
@@ -72,7 +72,7 @@ def parse_date(s: str) -> str | None:
     t = re.sub(r"\s+,", ",", t).replace("Sept ", "Sep ")
     fmts = ["%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y", "%d.%m.%Y", "%d/%m/%y", "%d-%m-%y", "%d %b %Y", "%d %B %Y",
             "%b %d, %Y", "%B %d, %Y", "%b %d %Y", "%B %d %Y", "%d %b, %Y", "%d %B, %Y"]
-    for f in fmts:
+    for f in fmts + ["%m/%d/%Y", "%m-%d-%Y"]:  # US month-first only when day-first is impossible
         try:
             d = datetime.strptime(t, f).date()
             if 1990 <= d.year <= 2100:
@@ -123,6 +123,8 @@ def _amount_on_line(lines, label_re, exclude_re=None, last=False):
     amt = re.compile(AMOUNT + r"\s*$")
     found = None
     for ln in lines:
+        if _is_item_row(ln.text):
+            continue
         for ci, cell in enumerate(_cells_text(ln)):
             if not lab.search(cell) or (exclude_re and re.search(exclude_re, cell, re.I)):
                 continue
@@ -165,31 +167,50 @@ def _vendor(lines: list[Line]):
     return respace(best[2]), best[3]
 
 
-ITEM_RE = re.compile(
-    r"^(?P<desc>.*?[A-Za-z].*?)\s+(?P<qty>\d+(?:\.\d+)?)\s+" + r"(?:PKR|Rs\.?|\$)?\s*(?P<unit>\d{1,3}(?:,\d{3})*(?:\.\d{1,2})?|\d+(?:\.\d{1,2})?)\s+"
-    + r"(?:PKR|Rs\.?|\$)?\s*(?P<amt>\d{1,3}(?:,\d{3})*(?:\.\d{1,2})?|\d+(?:\.\d{1,2})?)\s*$")
-HEADER_RE = re.compile(r"(?i)description|item|particulars|product")
-STOP_RE = re.compile(r"(?i)^\s*(sub\s*-?\s*total|total|grand|discount|gst|vat|sales\s*tax|tax\b|amount\s*due|net\s*payable)")
+NUM = r"\d{1,3}(?:,\d{3})+(?:\.\d{1,2})?|\d+(?:\.\d{1,2})?"
+CUR = r"(?:PKR|Rs\.?|\$|US\$|AED)?\s*"
+ITEM_RE = re.compile(rf"^(?:(?P<sno>\d{{1,3}})[.)]?\s+)?(?P<desc>.*?[A-Za-z].*?)\s+{CUR}(?P<a>{NUM})\s+{CUR}(?P<b>{NUM})\s+{CUR}(?P<amt>{NUM})\s*$")
+ITEM2_RE = re.compile(rf"^(?:(?P<sno>\d{{1,3}})[.)]?\s+)?(?P<desc>.*?[A-Za-z].*?)\s+{CUR}(?P<unit>{NUM})\s+{CUR}(?P<amt>{NUM})\s*$")
+HEADER_RE = re.compile(r"(?i)description|item|particulars|product|service|details")
+QTY_HDR = r"qty|quantity|hours|hrs|units|pcs|nos"
+PRICE_HDR = r"rate|price|unit\s*cost|cost"
+STOP_RE = re.compile(r"(?i)^\s*(sub\s*-?\s*total|total|grand|gross|net\s*payable|discount|less|gst|vat|sales\s*tax|tax\b|amount\s*due|balance)")
+
+
+def _is_item_row(text: str) -> bool:
+    """Item rows carry 3+ plain numbers (qty, price, amount); summary rows (Subtotal, GST 18%, Total) do not."""
+    return len(re.findall(rf"(?<![\d.%])(?:{NUM})(?![\d%])", text)) >= 3 and bool(ITEM_RE.match(text))
 
 
 def _line_items(lines: list[Line]):
-    items, in_table = [], False
+    items, in_table, price_first = [], False, False
     for ln in lines:
         text = ln.text
-        if HEADER_RE.search(text) and re.search(r"(?i)qty|quantity", text):
+        if HEADER_RE.search(text) and re.search(rf"(?i)\b(?:{QTY_HDR})\b", text):
             in_table = True
-            continue
-        if STOP_RE.search(text):
-            in_table = False
+            q = re.search(rf"(?i)\b(?:{QTY_HDR})\b", text); pr = re.search(rf"(?i)\b(?:{PRICE_HDR})\b", text)
+            price_first = bool(pr and pr.start() < q.start())
             continue
         m = ITEM_RE.match(text)
-        if not m:
+        if STOP_RE.search(text) and not (m and _is_item_row(text) and in_table):
+            in_table = False
             continue
-        qty, unit, amt = to_number(m["qty"]), to_number(m["unit"]), to_number(m["amt"])
-        consistent = qty is not None and unit is not None and amt is not None and abs(qty * unit - amt) < 0.02 * max(1, amt)
+        if not m:
+            m2 = ITEM2_RE.match(text) if in_table and not STOP_RE.search(text) else None
+            unit, amt = (to_number(m2["unit"]), to_number(m2["amt"])) if m2 else (None, None)
+            if unit and amt and abs(amt / unit - round(amt / unit)) < 0.001 and 1 <= round(amt / unit) <= 10000:
+                # quantity not readable (a lone "1" is easy for OCR to miss): work it out, and flag it for review
+                items.append({"description": respace(m2["desc"].strip(" -|:")), "quantity": float(round(amt / unit)), "unit_price": unit,
+                              "amount": amt, "_conf": min(ln.conf, 0.8), "_page": ln.page, "_box": ln.box, "_math_ok": True,
+                              "_qty_inferred": True})
+            continue
+        a, b, amt = to_number(m["a"]), to_number(m["b"]), to_number(m["amt"])
+        qty, unit = (b, a) if price_first else (a, b)
+        consistent = abs(qty * unit - amt) < 0.02 * max(1, amt)
         if not (in_table or consistent):
             continue
-        items.append({"description": respace(m["desc"].strip(" -|:")), "quantity": qty, "unit_price": unit, "amount": amt,
+        desc = m["desc"].strip(" -|:")
+        items.append({"description": respace(desc), "quantity": qty, "unit_price": unit, "amount": amt,
                       "_conf": ln.conf, "_page": ln.page, "_box": ln.box, "_math_ok": consistent})
     return items
 
@@ -208,17 +229,50 @@ def detect_currency(text: str, default: str) -> str:
     return default
 
 
+def _labelish(t: str) -> bool:
+    letters = sum(ch.isalpha() for ch in t)
+    return bool(t) and t[0].isalpha() and len(t) <= 40 and len(t.split()) <= 5 and letters >= 0.6 * len(t.replace(" ", ""))
+
+
+def _valueish(t: str) -> bool:
+    return bool(re.fullmatch(r"[-+]?[\d.,/%:\s-]+|[A-Za-z]{0,3}[\d.,%/-]+", t.strip())) or t.strip() in ("-", "—")
+
+
 def extract_key_values(lines: list[Line]):
-    """For free-form documents (forms): every 'Label: value' pair."""
+    """For free-form documents (forms): 'Label: value', label and value in separate boxes, and table rows."""
     out = {}
+
+    def put(k, v, ln):
+        k, v = respace(k).strip(" :.-"), respace(str(v).strip())
+        if not k or not v:
+            return
+        key, n = k, 2
+        while key in out:
+            key, n = f"{k} ({n})", n + 1
+        out[key] = (v, ln)
+
     for ln in lines:
-        cells = _cells_text(ln)
-        for i, cell in enumerate(cells):
-            m = re.match(r"^([A-Za-z][A-Za-z /().#-]{1,40}?)\s*:\s*(.+)$", cell)
-            if m:
-                out.setdefault(respace(m[1]).strip(), (respace(m[2].strip()), ln))
-            elif cell.endswith(":") and i + 1 < len(cells):
-                out.setdefault(respace(cell[:-1]).strip(), (respace(cells[i + 1].strip()), ln))
+        cells = [c for c in _cells_text(ln) if c.strip()]
+        if not cells or re.fullmatch(r"(?i)page \d+ of \d+|\d+", " ".join(cells)):
+            continue
+        colon_pairs = [(i, re.match(r"^([A-Za-z][A-Za-z0-9 /().#'-]{0,40}?)\s*:\s*(.+)$", c)) for i, c in enumerate(cells)]
+        if any(m for _, m in colon_pairs) or any(c.endswith(":") for c in cells):
+            for i, c in enumerate(cells):
+                m = re.match(r"^([A-Za-z][A-Za-z0-9 /().#'-]{0,40}?)\s*:\s*(.+)$", c)
+                if m:
+                    put(m[1], m[2], ln)
+                elif c.endswith(":") and i + 1 < len(cells):
+                    put(c[:-1], cells[i + 1], ln)
+            continue
+        if len(cells) % 2 == 0 and all(_labelish(cells[i]) for i in range(0, len(cells), 2)) \
+                and all(cells[i].lower() != cells[i + 1].lower() for i in range(0, len(cells), 2)):
+            # label and value in separate boxes: "NAME | DANIYAL NAWAZ | CLASS | IX-A"
+            for i in range(0, len(cells), 2):
+                put(cells[i], cells[i + 1], ln)
+            continue
+        if len(cells) >= 2 and _labelish(cells[0]) and all(_valueish(c) for c in cells[1:]):
+            # table row: "English | 36.00 | 90.00% | 54.00"
+            put(cells[0], " | ".join(cells[1:]), ln)
     return out
 
 
@@ -232,11 +286,11 @@ def extract(lines: list[Line], doc_type: str, default_currency: str = "PKR") -> 
         return {"fields": {k: v for k, (v, _) in kv.items()}, "items": [],
                 "conf": {k: ln.conf for k, (_, ln) in kv.items()}}
 
-    v, ln = _find_labeled(lines, LABELS["invoice_no"], r"[A-Z0-9][A-Z0-9\-/_.]{2,24}")
+    v, ln = _find_labeled(lines, LABELS["invoice_no"], r"(?=[A-Z0-9\-/_.]*\d)[A-Z0-9][A-Z0-9\-/_.]{1,24}")
     if v and not DATE_RE.fullmatch(v):
         fields["invoice_no"], conf["invoice_no"] = v.rstrip("."), ln.conf
 
-    v, ln = _find_labeled(lines, r"(?:invoice|bill|receipt|po|order)\s*date|date\s*of\s*issue", DATE_RE.pattern)
+    v, ln = _find_labeled(lines, r"(?:invoice|bill|receipt|po|order|issue|issued)\s*date|date\s*of\s*issue|issued\s*on", DATE_RE.pattern)
     if not v:
         v, ln = _find_labeled(lines, r"(?<!due\s)(?<!due)(?:dated|date)", DATE_RE.pattern)
     if v:

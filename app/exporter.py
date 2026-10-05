@@ -116,6 +116,11 @@ def build_xlsx(batch, docs, config) -> bytes:
         for k, c in checks.items():
             if isinstance(c, dict) and c.get("status") in ("warn", "error") and d["status"] not in ("approved",):
                 reasons.append(f"{labels.get(k, k)}: {c.get('reason')}")
+        if d["status"] != "approved":
+            for n, it in enumerate(json.loads(d["items_json"] or "[]"), 1):
+                c = it.get("check") or {}
+                if c.get("status") in ("warn", "error"):
+                    reasons.append(f"Line {n} ({it.get('description') or 'item'}): {c.get('reason')}")
         for w in json.loads(d["warnings_json"] or "[]"):
             if d["status"] != "approved" or w["type"] == "duplicate":
                 reasons.append(w["text"])

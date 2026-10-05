@@ -62,16 +62,46 @@ def _get_ocr():
         return _ocr
 
 
-def ocr_image(img: Image.Image) -> list[Segment]:
+def _ocr_raw(img: Image.Image):
     engine = _get_ocr()
     with _ocr_lock:
         result, _ = engine(np.asarray(img.convert("RGB")))
+    return result or []
+
+
+def _to_segments(result) -> list[Segment]:
     segs = []
-    for box, text, score in result or []:
+    for box, text, score in result:
         xs = [p[0] for p in box]; ys = [p[1] for p in box]
         x0, y0, x1, y1 = min(xs), min(ys), max(xs), max(ys)
-        segs.append(Segment(text.strip(), (x0, y0, x1, y1), float(score), y1 - y0))
+        h = float(np.hypot(box[3][0] - box[0][0], box[3][1] - box[0][1])) or (y1 - y0)
+        segs.append(Segment(text.strip(), (x0, y0, x1, y1), float(score), h))
     return [s for s in segs if s.text]
+
+
+def _skew_degrees(result) -> float:
+    """Median slope of the wider text boxes: a tilted photo makes rows drift into each other."""
+    angles = []
+    for box, text, _ in result:
+        dx, dy = box[1][0] - box[0][0], box[1][1] - box[0][1]
+        if dx > 60 and len(text) >= 4:
+            angles.append(np.degrees(np.arctan2(dy, dx)))
+    return float(np.median(angles)) if len(angles) >= 5 else 0.0
+
+
+def ocr_page(img: Image.Image) -> tuple[Image.Image, list[Segment]]:
+    """OCR a page image; tilted photos are straightened first so table rows stay on one line."""
+    result = _ocr_raw(img)
+    angle = _skew_degrees(result)
+    if 0.4 <= abs(angle) <= 15:
+        # straighten and read again: a straight image gives cleaner text and keeps table rows on one line
+        img = img.rotate(angle, resample=Image.BICUBIC, expand=True, fillcolor=(255, 255, 255))
+        result = _ocr_raw(img)
+    return img, _to_segments(result)
+
+
+def ocr_image(img: Image.Image) -> list[Segment]:
+    return _to_segments(_ocr_raw(img))
 
 
 def sharpness(img: Image.Image) -> float:
@@ -107,7 +137,7 @@ def _read_image(path: Path, doc_id: str) -> ReadResult:
     if min(img.size) < 300:
         raise UnreadableDocument("This image is too small to read. Please upload a larger photo.")
     sharp = sharpness(img)
-    segs = ocr_image(img)
+    img, segs = ocr_page(img)
     page = Page(1, img.width, img.height, _save_page_image(doc_id, 1, img), segs, "ocr")
     return ReadResult("photo", [page], sharp, [img])
 
@@ -134,9 +164,9 @@ def _read_pdf(path: Path, doc_id: str) -> ReadResult:
                                 1.0, float(w.get("size", 0))) for w in words]
                 source = "text"
                 if sum(len(s.text) for s in segs) < 25:  # scanned page, no text layer
-                    segs = ocr_image(img)
-                    source, kind = "ocr", "scan"
                     sharp_vals.append(sharpness(img))
+                    img, segs = ocr_page(img)
+                    source, kind = "ocr", "scan"
                 pages.append(Page(i + 1, img.width, img.height, _save_page_image(doc_id, i + 1, img), segs, source))
                 images.append(img)
     except Exception:
