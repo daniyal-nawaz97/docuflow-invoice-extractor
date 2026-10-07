@@ -2,6 +2,9 @@
 
 **Upload your invoices, bills and forms. In minutes you get a clean Excel sheet, no typing.**
 
+### 🔗 Live demo: [docuflow.8-234-95-72.sslip.io](https://docuflow.8-234-95-72.sslip.io)
+Open the link and click **Try with sample invoices**, no sign-up needed.
+
 Invoices, receipts, purchase orders and forms (PDF, scanned copy or phone photo) go in. Every important detail comes out in a tidy table, checked, and downloadable as Excel or CSV.
 
 ![Review screen](docs/screenshots/review.png)
